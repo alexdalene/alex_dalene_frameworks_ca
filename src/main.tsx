@@ -1,5 +1,6 @@
 import Root from './routes/root';
 import ErrorPage from './error-page';
+import Cart from './routes/cart/cart';
 import './index.css';
 
 import React from 'react';
@@ -11,6 +12,12 @@ const router = createBrowserRouter([
     path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: 'cart',
+        element: <Cart />,
+      },
+    ],
   },
 ]);
 
