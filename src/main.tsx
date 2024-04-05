@@ -3,7 +3,7 @@ import ErrorPage from '@/error-page';
 import Cart from '@/routes/cart';
 import Products from '@/routes/products';
 import { allProductsLoader } from '@/api/loader';
-import Product from '@/routes/products/product';
+import Product from '@/routes/product';
 import { singleProductLoader } from '@/api/loader';
 import './index.css';
 
@@ -12,6 +12,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Checkout from './routes/checkout';
+import Contact from './routes/contact';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       {
+        path: 'checkout',
+        element: <Checkout />,
+      },
+      {
         path: '/',
         element: <Products />,
         loader: allProductsLoader,
@@ -32,6 +38,10 @@ const router = createBrowserRouter([
         path: 'product/:id',
         element: <Product />,
         loader: singleProductLoader,
+      },
+      {
+        path: 'contact',
+        element: <Contact />,
       },
     ],
   },
