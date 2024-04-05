@@ -1,14 +1,16 @@
-import Header from "@/components/Header";
+import Header from '@/components/Header';
+import { Toaster } from '@/components/ui/toaster';
 
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
 const Root = () => {
   return (
     <>
       <Header />
-      <main className="mx-auto grid w-full max-w-3xl place-content-center py-20">
+      <main className="mx-auto w-full max-w-3xl py-20">
         <Outlet />
       </main>
+      <Toaster />
     </>
   );
 };
