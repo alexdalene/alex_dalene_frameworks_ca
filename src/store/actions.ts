@@ -1,7 +1,11 @@
 interface Product {
   id: number;
-  name: string;
+  title: string;
   price: number;
+  image: {
+    url: string;
+    alt: string;
+  };
 }
 
 interface cartItem {
@@ -19,7 +23,7 @@ export const addToCart = (item: Product) => (state: CartState) => {
   if (itemExists) {
     return {
       items: state.items.map((i) =>
-        i.product.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+        i.product.id === item.id ? { ...i, quantity: i.quantity + 1 } : i,
       ),
     };
   } else {
@@ -36,3 +40,19 @@ export const removeFromCart = (item: Product) => (state: CartState) => ({
 export const clearCart = () => (state: CartState) => ({
   items: (state.items = []),
 });
+
+export const increaseQuantity = (item: Product) => (state: CartState) => ({
+  items: state.items.map((i) =>
+    i.product.id === item.id ? { ...i, quantity: i.quantity + 1 } : i,
+  ),
+});
+
+export const decreaseQuantity = (item: Product) => (state: CartState) => {
+  return {
+    items: state.items.map((i) =>
+      i.product.id === item.id && i.quantity > 1
+        ? { ...i, quantity: i.quantity - 1 }
+        : i,
+    ),
+  };
+};
