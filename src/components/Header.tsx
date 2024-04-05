@@ -1,7 +1,5 @@
 import { useTheme } from './theme-provider';
-
-import { Link, useLocation } from 'react-router-dom';
-import { ReactNode } from 'react';
+import useCartStore from '@/store/store';
 
 import {
   NavigationMenu,
@@ -17,6 +15,10 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+
+import { Link, useLocation } from 'react-router-dom';
+import { ReactNode } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
 type CustomLinkProps = {
@@ -39,6 +41,7 @@ const CustomLink = ({ to, children, ...props }: CustomLinkProps) => {
 
 const Header = () => {
   const { setTheme } = useTheme();
+  const amountInCart = useCartStore((state) => state.items.length);
 
   return (
     <NavigationMenu className="min-w-full justify-end px-2 pt-2">
@@ -47,7 +50,17 @@ const Header = () => {
           <CustomLink to={'/'}>Home</CustomLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <CustomLink to={'/cart'}>Cart</CustomLink>
+          <CustomLink to={'/contact'}>Contact</CustomLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <CustomLink to={'/cart'}>
+            Cart{' '}
+            {amountInCart > 0 && (
+              <Badge variant="default" className="absolute right-12 top-8">
+                {amountInCart}
+              </Badge>
+            )}
+          </CustomLink>
         </NavigationMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
