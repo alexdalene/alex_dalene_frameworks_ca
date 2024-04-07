@@ -18,7 +18,7 @@ const Checkout = () => {
 
     setTimeout(() => {
       clearCart();
-    }, 2000);
+    }, 500);
   });
 
   return (
