@@ -1,23 +1,44 @@
-# Frameworks Course Assignment
+# E-com Store
 
-A functional e-com store built using React, TypeScript, Vite, shadcn/ui.
+<img width="1470" alt="Screenshot 2024-06-15 at 13 45 48" src="https://github.com/alexdalene/alex_dalene_frameworks_ca/assets/111867370/84397d32-f940-4950-8230-49910df791ee">
 
-<img width="791" alt="Screenshot 2024-04-07 at 09 18 37" src="https://github.com/alexdalene/alex_dalene_frameworks_ca/assets/111867370/8d2ba67b-f1a5-4829-8662-36dab3aa5e7c">
+E-com store with clean design and automatic theming, built with shadcn/ui.
+
+## Description
+
+A fully functional e-com store that lets the user browse through items, add them to cart, increase/decrease amount, remove from cart and/or finally purhase them.
+
+## Built With
+
+[![My Skills](https://skillicons.dev/icons?i=ts,html,css,tailwind,vite&perline=4)](https://skillicons.dev)
 
 
-## Installation
+## Getting Started
 
-1. Clone the repo
+### Installing
+
+1. Clone the repo:
+
 ```bash
 git clone https://github.com/alexdalene/alex_dalene_frameworks_ca.git
 ```
 
-2. Install dependencies
-```bash
-bun install
+2. Install the dependencies:
+
+```
+npm install
 ```
 
-3. Run local environment
+### Running
+
+To run the app, run the following commands:
+
 ```bash
-bun run dev
+npm run dev
 ```
+
+## Contact
+
+[My Twitter page](https://x.com/xenelad)
+
+[My LinkedIn page](https://www.linkedin.com/in/alex-dalene/)
